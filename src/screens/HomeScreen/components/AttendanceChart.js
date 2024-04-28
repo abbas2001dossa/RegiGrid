@@ -24,7 +24,7 @@ const AttendanceChart = (props) => {
             barWidth={40}
             noOfSections={4}
             barBorderRadius={4}
-            frontColor="lightgray"
+            frontColor="black"
             data={barData}
             yAxisThickness={0}
             xAxisThickness={0}

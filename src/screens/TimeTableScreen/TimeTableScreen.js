@@ -3,6 +3,7 @@ import React from 'react'
 import tw from 'twrnc'
 import Header from '../../components/Header'
 import TabViewComponent from './components/TabViewComponent'
+import TabVIew from './components/TabView'
 
 const TimeTableScreen = () => {
   return (
@@ -24,9 +25,8 @@ const TimeTableScreen = () => {
         </ScrollView>
       </View> */}
       
-      <TabViewComponent></TabViewComponent>
-
-      
+      {/* <TabViewComponent></TabViewComponent> */}
+      <TabVIew></TabVIew>
 
     </SafeAreaView>
   )

@@ -9,9 +9,6 @@ import { useNavigation } from '@react-navigation/native'
 const SignInScreen = () => {
 
   const navigation=useNavigation();
-  const pressed=()=>{
-    navigation.navigate('BottomTabNavigation');
-  }
 
   return (
     <SafeAreaView style={tw`h-100% bg-white w-100%`}>
@@ -39,13 +36,15 @@ const SignInScreen = () => {
           />
         </View>
 
-        <View style={tw`h-20% w-full items-center `}>
-          <TextMessage text="Welcome to RegiGrid"  styling="text-black text-25px font-bold " ></TextMessage>
+        <View style={tw`h-20% w-full items-center`}>
+          <TextMessage text="Welcome to RegiGrid"  styling="text-black text-25px font-bold max-w-85%" ></TextMessage>
+          <TextMessage text="Welcome to RegiGrid, your comprehensive learning management system ! "  
+          styling="text-gray-500 text-15px  max-w-85% text-center " ></TextMessage>
         </View>
 
         {/* signin Button */}
         <View style={tw`h-20% w-full items-center justify-center `}>
-            <SignInButton onPress={pressed}></SignInButton>
+            <SignInButton onPress={()=>navigation.navigate('BottomTabNavigation')}></SignInButton>
         </View>
     </SafeAreaView>
   )
