@@ -5,14 +5,18 @@ import WelcomeScreen from '../screens/WelcomeScreen/WelcomeScreen';
 import SignInScreen from '../screens/SignInScreen/SignInScreen';
 import HomeScreen from '../screens/HomeScreen/HomeScreen';
 import TabNavigator from './TabNavigator';
+import CourseRegistration from '../screens/CourseRegistration/CourseRegistration';
+import CourseExhange from '../screens/CourseExchange/CourseExhange';
 
 const StackNavigator = () => {
     const Stack=createNativeStackNavigator();
   return (
-    <Stack.Navigator initialRouteName='Welcome'>
+    <Stack.Navigator initialRouteName='BottomTabNavigation'>
         <Stack.Screen name='Welcome' component={WelcomeScreen} options={{headerShown:false}}></Stack.Screen>
         <Stack.Screen name='SignIn' component={SignInScreen} options={{headerShown:false}}></Stack.Screen>
         <Stack.Screen name='BottomTabNavigation' component={TabNavigator} options={{headerShown:false}} ></Stack.Screen>
+        <Stack.Screen name='CourseRegistration' component={CourseRegistration} options={{headerShown:false}}></Stack.Screen>
+        <Stack.Screen name='CourseExchange' component={CourseExhange} options={{headerShown:false}}></Stack.Screen>
     </Stack.Navigator>
   )
 }

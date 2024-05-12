@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "957043024199",
+    "project_id": "regigrid-2ef49",
+    "storage_bucket": "regigrid-2ef49.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:957043024199:android:e4902324fd1197da04ac62",
+        "android_client_info": {
+          "package_name": "com.regigrid"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCccoT-E7h1Pz7c0jN3iuVeKPH0VKPorZA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
