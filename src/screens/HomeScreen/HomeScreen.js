@@ -19,10 +19,23 @@ const HomeScreen = () => {
       </View>
 
       <View style={tw`h-full w-full `}>
-        <ScrollView style={tw``}>
+        {/* <ScrollView style={tw``}> */}
+
+          <View style={tw`h-40%  mt-50px  w-full p-13px`}>
+            <View style={tw`bg-white h-full w-full rounded-20px shadow-lg flex-row gap-10px `}>
+              <View style={tw`h-full w-40% border `}>
+                
+              </View>
+              <View style={tw`h-full w-50% border `}>
+
+              </View>
+            </View>
+          </View>
+
+
 
           {/* functionalities  */}
-          <View style={tw`h-250px p-10px w-full gap-10px  mt-50px`}>
+          <View style={tw`h-35% p-10px w-full gap-10px  mt-20px`}>
             <View style={tw`h-100% w-100% flex-row gap-10px`}>  
               <TouchableOpacity onPress={()=>navigation.navigate("CourseRegistration")} style={tw`bg-white h-full w-55%  rounded-20px shadow-lg`}>
                 <Image style={[tw`h-50% w-50% absolute top-10px right-10px`,{resizeMode:'contain'}]} source={require('../../assets/HomeScreen/courseRegistration.jpeg')}></Image>
@@ -38,19 +51,7 @@ const HomeScreen = () => {
                 </View>
               </TouchableOpacity>
             </View>
-            {/* <View style={tw`h-30%  w-100% `}>
-              <ScrollView 
-                style={tw``}
-                horizontal
-                showsHorizontalScrollIndicator={false}
-              >
-                <HomeCard color=""></HomeCard>
-                <HomeCard color=""></HomeCard>
-                <HomeCard color=""></HomeCard>
-                <HomeCard color=""></HomeCard>
-
-              </ScrollView>
-            </View> */}
+            
             
           </View>
 
@@ -71,7 +72,7 @@ const HomeScreen = () => {
           </View> */}
 
           <View style={tw`h-60px mt-100px`}></View> 
-        </ScrollView>
+        {/* </ScrollView> */}
       </View>
     
     </SafeAreaView>
