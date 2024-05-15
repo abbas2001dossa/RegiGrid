@@ -47,8 +47,11 @@ const TabView = () => {
   };
 
   const slotsDataMonday = [
-    { id: '1', venue: "B-12 EE", class: "AI BCS-6E", teacherName: "Dr. Fahad Wasseem", color: 'pink-600', startTime: "8:30 AM", endTime: "9:25 AM" },
-    { id: '2', venue: "B-12 EE", class: "AI BCS-6E", teacherName: "Dr. Fahad Wasseem", color: 'pink-600', startTime: "8:30 AM", endTime: "9:25 AM" },
+    { id: '1', venue: "B-12 EE", class: "AI BCS-6E", teacherName: "Dr. Fahad Wasseem", color: 'pink-600', startTime: "8:00 AM", endTime: "8:55 AM" },
+    { id: '2', venue: "B-12 EE", class: "AI BCS-6E", teacherName: "Dr. Fahad Wasseem", color: 'pink-600', startTime: "9:00 AM", endTime: "9:55 AM" },
+    { id: '3', venue: "E-2  CS", class: "WE BCS-6E", teacherName: "Dr. Muntazir Ahmed", color: 'green-600', startTime: "11:00 AM", endTime: "11:55 AM" },
+    { id: '4', venue: "B-10 EE", class: "BPE BCS-6E", teacherName: "Dr. Amna Baig", color: 'yellow-600', startTime: "1:00 PM", endTime: "1:55 PM" },
+    { id: '5', venue: "B-10 EE", class: "TOA BCS-6E", teacherName: "Dr. Ahil Aleem", color: 'blue-600', startTime: "3:00 PM", endTime: "3:55 PM" }
     // Add more slot data as needed
   ];
   const slotsDataTuesday = [
@@ -62,7 +65,7 @@ const TabView = () => {
         items={NavigationTabs}
         onPress={onPress}
         selected={selectedIndex}
-        itemWidth={80}
+        itemWidth={90}
         scrollAreaStyle={{ height: 50 }}
       />
      <View style={tw`bg-white `} >

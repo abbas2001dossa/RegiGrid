@@ -12,6 +12,7 @@
   "dependencies": {
     "@itenl/react-native-scrollable-tabview": "^1.1.7",
     "@nyashanziramasanga/react-native-horizontal-scroll-menu": "^1.0.11",
+    "@react-native-async-storage/async-storage": "^1.23.1",
     "@react-native-firebase/app": "^19.2.2",
     "@react-native-firebase/messaging": "^19.2.2",
     "@react-native-google-signin/google-signin": "^11.0.1",
@@ -33,6 +34,7 @@
     "react-native-scrollable-tab-view": "^1.0.0",
     "react-native-svg": "^15.0.0",
     "react-native-tab-view": "^3.5.2",
+    "react-native-toast-message": "^2.2.0",
     "react-native-vector-icons": "^10.0.3",
     "twrnc": "^3.6.4"
   },

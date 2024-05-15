@@ -22,15 +22,15 @@ const MoreProfileComp = () => {
   };
 
   return (
-    <TouchableOpacity style={tw` h-85px flex-row items-center justify-center rounded-15px bg-[#3f51b5] w-full  shadow-md`}>
+    <View style={tw` h-85px flex-row items-center justify-center rounded-15px bg-[#3f51b5] w-full  shadow-md`}>
       <View style={tw`h-60% w-5%`}></View>
-      <View style={tw`h-60% rounded-100px w-15% bg-white items-center justify-center `}> 
-        <Image style={[tw`h-full w-full`,{resizeMode:'contain'}]} source={require('../../../assets/MoreScreen/av4.png')}></Image>
+      <View style={tw`h-60%  w-15% items-center justify-center `}> 
+        <Image style={[tw`h-full rounded-100px w-full`,{resizeMode:'contain'}]} source={userData ? {uri:userData.user?.photo} : require('../../../assets/MoreScreen/av4.png')}></Image>
       </View>
       <View style={tw`h-60% w-80%   justify-center  rounded-10px  `}> 
-        <TextMessage text={userData?.familyName} styling="text-18px ml-10px font-bold text-white"></TextMessage>
+        <TextMessage text={userData ? userData.user?.name :"Abbas "} styling="text-18px ml-20px font-bold text-white"></TextMessage>
       </View>
-    </TouchableOpacity>
+    </View>
   )
 }
 

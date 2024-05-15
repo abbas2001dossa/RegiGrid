@@ -20,14 +20,14 @@ const TabNavigator = () => {
                     if (route.name === 'Home') {
                         textName = focused ? 'Home' : 'Home';
                     }
-                    else if (route.name === 'QRScan') {
-                        textName = focused ? 'Attendance' : 'Attendance';
-                    }
+                    // else if (route.name === 'QRScan') {
+                    //     textName = focused ? 'Attendance' : 'Attendance';
+                    // }
                     else if (route.name === 'TimeTable') {
                         textName = focused ? 'Timetable' : 'Timetable';
                     }
                     else if (route.name === 'More') {
-                        textName = focused ? 'Other' : 'Other';
+                        textName = focused ? 'Profile' : 'Profile';
                     }
                     return <Text style={{ color: focused ? 'orange' : 'white', fontSize: 10, marginBottom:5 }}>{textName}</Text>;
                 },
@@ -46,9 +46,6 @@ const TabNavigator = () => {
                     if (route.name === 'Home') {
                         iconName = focused ? 'home' : 'home';
                     }
-                    else if (route.name === 'QRScan') {
-                        iconName = focused ? 'qrcode-scan' : 'qrcode-scan';
-                    }
                     else if (route.name === 'TimeTable') {
                         iconName = focused ? 'timetable' : 'timetable';
                     }
@@ -64,7 +61,7 @@ const TabNavigator = () => {
                 component={HomeScreen}
                 options={{ headerShown: false }}
             ></Tab.Screen>
-            <Tab.Screen name="QRScan" component={QRScanScreen} options={{ headerShown: false }} />
+            {/* <Tab.Screen name="QRScan" component={QRScanScreen} options={{ headerShown: false }} /> */}
             <Tab.Screen name="TimeTable" component={TimeTableScreen} options={{ headerShown: false }} />
             <Tab.Screen name='More' component={MoreScreen} options={{ headerShown: false }} ></Tab.Screen>
         </Tab.Navigator>

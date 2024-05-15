@@ -13,17 +13,6 @@ const TimeTableScreen = () => {
       <View style={tw`h-10%`}>
         <Header text="My TimeTable"></Header>
       </View>
-
-      {/* scorll List */}
-      {/* <View style={tw`h-10% `}>
-        <ScrollView
-          style={tw` border `}
-          showsHorizontalScrollIndicator={false}
-          horizontal
-        >
-
-        </ScrollView>
-      </View> */}
       
       {/* <TabViewComponent></TabViewComponent> */}
       <TabVIew></TabVIew>
