@@ -4,25 +4,50 @@ import tw from 'twrnc'
 import { useNavigation } from '@react-navigation/native'
 import { GoogleSignin } from '@react-native-google-signin/google-signin'
 import TextMessage from '../../components/TextMessage'
+import axios from 'axios';
+const apiUrl =require('../../../Api');
+
 
 const HomeScreen = () => {
+
   const navigation=useNavigation();
   const [userData,setUserData]=useState(null);
+  const [userDetails,setUserDetails]=useState(null);
   const [name,setName]=useState("");
+
   useEffect(()=>{
     GoogleSignin.configure({
-      webClientId:'957043024199-dtf0gphid6avhn6lo8oedv51ui9fjinf.apps.googleusercontent.com'
+      webClientId:process.env.WEB_CLIENT_ID
     });
     getCurrentUser();
+    
   },[]);
 
   const getCurrentUser = async () => {
     const currentUser = await GoogleSignin.getCurrentUser();
     console.log(currentUser);
     setUserData(currentUser);
-    // setName(await userData.user?.name);
-    // setState({ currentUser });
+    getUserDetails();
   };
+
+  
+  const getUserDetails =async  ()=>{
+    // console.log(userData.user?.email);
+    try{
+     axios.get(apiUrl + `/api/student/email/${userData.user?.email}`)
+     .then((response)=>{
+      console.log(response.data);
+      setUserDetails(response.data);
+     })
+     .catch((err)=>{
+      console.log(err);
+     })
+    }
+    catch(err){
+      console.log(err);
+    }
+  };
+
   return (
     <SafeAreaView style={tw`h-100% w-100% bg-white`}>
       
@@ -56,7 +81,7 @@ const HomeScreen = () => {
 
             <View style={tw`h-90%  w-33% flex-col `}>
               <View style={tw`h-80% w-full items-center justify-center `}>
-                <TextMessage text="9" styling="text-black font-semibold text-45px"></TextMessage>
+                <TextMessage text={userDetails ? userDetails.students[0]?._count.studentSemesterCourses : ''} styling="text-black font-semibold text-45px"></TextMessage>
               </View>
               <View style={tw`h-20% w-full items-center justify-center `}>
                 <TextMessage text="COURSES" styling="text-gray-500 "></TextMessage>
@@ -65,7 +90,7 @@ const HomeScreen = () => {
             
             <View style={tw`h-90%  w-33% flex-col `}>
               <View style={tw`h-80% w-full items-center justify-center `}>
-                <TextMessage text="3.23" styling="text-black font-semibold text-45px"></TextMessage>
+                <TextMessage text={userDetails ? userDetails?.cgpa : ''} styling="text-black font-semibold text-45px"></TextMessage>
               </View>
               <View style={tw`h-20% w-full items-center justify-center `}>
                 <TextMessage text="CGPA" styling="text-gray-500 "></TextMessage>
@@ -74,7 +99,7 @@ const HomeScreen = () => {
             
             <View style={tw`h-90%  w-33% flex-col `}>
               <View style={tw`h-80% w-full items-center justify-center `}>
-                <TextMessage text="8" styling="text-black font-semibold text-45px"></TextMessage>
+                <TextMessage text={userDetails ? userDetails._count?.students : ''} styling="text-black font-semibold text-45px"></TextMessage>
               </View>
               <View style={tw`h-20% w-full items-center justify-center `}>
                 <TextMessage text="SEMESTER" styling="text-gray-500 "></TextMessage>
@@ -91,7 +116,7 @@ const HomeScreen = () => {
             <View style={tw`h-86%  w-full `}>
               <ScrollView  style={tw``}>
                 
-                <View style={tw`h-150px w-full border-b  flex-row `}>
+                <View style={tw`h-150px w-full border-b border-gray-200 flex-row `}>
                   <View style={tw`h-full w-50%  items-center justify-center `}>
                     <View style={tw`h-80% w-80% items-center justify-center `}>
                       <Image source={require('../../assets/idcard.jpg')} style={[tw`h-full w-full rounded-20px`,{resizeMode:'cover'}]}></Image>
@@ -101,9 +126,9 @@ const HomeScreen = () => {
                     <TextMessage text="All students should be informed that from June 4th of 2021, their student ID card  should ... " styling="text-black font-semibold text-15px max-w-150px"></TextMessage>
                   </View>
                 </View>
-                <View style={tw`h-150px w-full border-b  flex-row `}>
+                <View style={tw`h-150px w-full border-b border-gray-200 flex-row `}>
                   <View style={tw`h-full w-50%  items-center justify-center `}>
-                    <TextMessage text="All students should be informed that from June 4th of 2021, their student ID card  should ... " styling="text-black font-semibold text-15px max-w-150px"></TextMessage>
+                    <TextMessage text="Covid 19 precautions include students to practice social distancing, wear a mask, wash hands frequently, and get vaccinated." styling="text-black font-semibold text-15px max-w-150px"></TextMessage>
                   </View>
                   <View style={tw`h-full w-50%  items-center justify-center `}>
                     <View style={tw`h-80% w-80% items-center justify-center `}>
@@ -111,7 +136,7 @@ const HomeScreen = () => {
                     </View>
                   </View>
                 </View>
-                <View style={tw`h-150px w-full  border-b flex-row `}>
+                <View style={tw`h-150px w-full  border-b border-gray-200 flex-row `}>
                   <View style={tw`h-full w-50%  items-center justify-center `}>
                     <View style={tw`h-80% w-80% items-center justify-center `}>
                       <Image source={{uri:'https://academiamag.com/wp-content/uploads/2022/05/shutterstock_1664708983.jpg'}} style={[tw`h-full w-full rounded-20px`,{resizeMode:'cover'}]}></Image>

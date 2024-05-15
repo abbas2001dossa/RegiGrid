@@ -16,7 +16,7 @@ const SignInScreen = () => {
 
   useEffect(() => {
     GoogleSignin.configure({
-      webClientId: '957043024199-dtf0gphid6avhn6lo8oedv51ui9fjinf.apps.googleusercontent.com',
+      webClientId: process.env.WEB_CLIENT_ID,
     });
   }, []);
 
@@ -45,14 +45,19 @@ const SignInScreen = () => {
       }
     } catch (err) {
       console.log(err);
+      Toast.show({
+        type: 'error',
+        text1: 'Sign in Error',
+        text2: 'Only Emails Within The Organization Allowed',
+    });
     } finally {
       setLoading(false);
     }
   };
 
   return (
-    
-        <SafeAreaView style={{ flex: 1, backgroundColor: 'white' }}>
+        <SafeAreaView style={tw`bg-white h-full w-full`}>
+        <View style={tw`bg-white h-full w-full`}>
           {/* logo */}
           <View style={tw`bg-[#3f51b5] h-10% w-full rounded-b-25px`}> 
             <Image 
@@ -82,6 +87,8 @@ const SignInScreen = () => {
           <View style={{ height: '20%', width: '100%', alignItems: 'center', justifyContent: 'center' }}>
             <SignInButton onPress={onGoogleButtonPress} />
           </View>
+        </View>
+        <Toast></Toast>
         </SafeAreaView>
   )
 };

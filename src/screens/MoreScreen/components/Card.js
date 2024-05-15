@@ -13,12 +13,11 @@ import {
 } from '@react-native-google-signin/google-signin'
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
-
 const Card = () => {
     const navigation=useNavigation();
     useEffect(()=>{
       GoogleSignin.configure({
-        webClientId:'957043024199-dtf0gphid6avhn6lo8oedv51ui9fjinf.apps.googleusercontent.com'
+        webClientId:process.env.WEB_CLIENT_ID
       })
     },[]);
 
@@ -49,14 +48,12 @@ const Card = () => {
       }
     };
     return (
-    <TouchableOpacity onPress={signOut} style={tw`mt-400px h-50px flex-row items-center justify-center rounded-15px bg-white w-full  shadow-md`}>
-      <View style={tw`h-60% w-5%`}></View>
-      <View style={tw`h-60% w-15% rounded-100px items-center justify-center bg-[#3f51b5]`}> 
-        {/* <Image style={[tw`h-full w-full`,{resizeMode:'contain'}]} source={require('../../../assets/MoreScreen/av4.png')}></Image> */}
-        <MaterialCommunityIcons name="logout" size={24} color="white"></MaterialCommunityIcons>
+    <TouchableOpacity onPress={signOut} style={tw`h-10% mt-50px border-t border-gray-400 flex-row items-center justify-center `}>
+      <View style={tw`w-20% h-90%  items-center justify-center `}>
+        <MaterialCommunityIcons name="logout" size={24} color="black" />
       </View>
-      <View style={tw`h-60% w-75% ml-10px  justify-center  rounded-10px bg-white `}> 
-        <TextMessage text="Log out" styling="text-18px font-semibold text-black"></TextMessage>
+      <View style={tw`w-80% h-90%  justify-center `}>
+        <TextMessage text="Signout" styling="text-gray-500 text-17px font-bold "></TextMessage>
       </View>
     </TouchableOpacity>
   )
