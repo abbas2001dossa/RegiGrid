@@ -34,7 +34,7 @@ local.properties
 *.keystore
 !debug.keystore
 .env
-
+Api.js
 # node.js
 #
 node_modules/

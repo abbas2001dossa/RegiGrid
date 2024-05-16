@@ -17,7 +17,7 @@ const HomeScreen = () => {
 
   useEffect(()=>{
     GoogleSignin.configure({
-      webClientId:process.env.WEB_CLIENT_ID
+      webClientId:'957043024199-dtf0gphid6avhn6lo8oedv51ui9fjinf.apps.googleusercontent.com'
     });
     getCurrentUser();
     

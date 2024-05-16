@@ -4,7 +4,6 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import tw from 'twrnc';
 import MoreScreen from '../screens/MoreScreen/MoreScreen';
 import TimeTableScreen from '../screens/TimeTableScreen/TimeTableScreen';
-import QRScanScreen from '../screens/QRScanScreen/QRScanScreen';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import HomeScreen from '../screens/HomeScreen/HomeScreen';
 
